@@ -11,3 +11,10 @@ mitty -v4 debug variant-call-analysis process \
  --fig-file ${FIG} \
  --plot-bin-size 5 \
  --title 'Example call analysis plot'
+
+mitty -v4 debug variant-call-analysis plot \
+  ${CSV} \
+  caller-report-example2.png \
+  --plot-bin-size 10 \
+  --plot-range 50 \
+  --title 'Example call analysis plot'

@@ -17,4 +17,4 @@ the data directory. You just have to ensure the names in the script match those 
 _(As a reference, on my laptop the process of indexing hg19 takes 4889.075 sec)_
 
 You can then run the scripts under each example directory. Note that some scripts rely on the outputs of 
-other scripts to work. 
+other scripts to work. Following the order in the tutorial will be best.

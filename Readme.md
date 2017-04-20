@@ -1,13 +1,9 @@
-Demo Data for the Mitty program
-===============================
+Demo scripts and data for the Mitty program
+===========================================
 
 [Mitty](https://github.com/sbg/Mitty) is a data simulator meant to help debug aligners and variant callers. 
-This repository contains data files required for the Mitty examples to run.
-
-If you wish to run the Mitty example scripts, please do the following
-
-1. Download the zipped archive for this repository and
-2. Extract the contents into the empty directory `examples/data` under the Mitty source tree.
+This repository contains scripts and data files that demonstrate Mitty's features. A full commentary on the
+scripts is available in the [Mitty tutorial](https://github.com/sbg/Mitty#detailed-tutorial-with-commentary).
 
 The data are released under the [Apache](LICENSE.txt) license except for when they are copies of publicly 
 available data, in which case the original license applies to them.

@@ -11,5 +11,4 @@ mitty -v4 debug poor-alignments \
   ${FASTQ_PREFIX}-corrupt-lq.txt \
   ${BAMOUT} \
   5 \
-  --processes 2 \
-  --no-sort
+  --processes 2

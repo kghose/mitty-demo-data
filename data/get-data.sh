@@ -1,11 +1,24 @@
 #!/usr/bin/env bash
 set -ex
 
-get_reference () {
+get_full_reference () {
 ftp ftp://ftp.1000genomes.ebi.ac.uk/vol1/ftp/technical/reference/human_g1k_v37.fasta.gz
 gunzip -c human_g1k_v37.fasta.gz | bgzip -c > human_g1k_v37.fa.gz
 rm human_g1k_v37.fasta.gz
 bwa index human_g1k_v37.fa.gz
+}
+
+
+get_partial_reference () {
+URL=http://hgdownload.soe.ucsc.edu/goldenPath/hg19/chromosomes
+REFS=(chr20.fa.gz chr22.fa.gz chrX.fa.gz chrY.fa.gz)
+for REF in ${REFS[@]}
+do
+  ftp ${URL}/${REF}
+done
+cat "${REFS[@]}" > human_g1k_v37.part.fa.gz
+rm "${REFS[@]}"
+bwa index human_g1k_v37.part.fa.gz
 }
 
 
@@ -30,6 +43,6 @@ mv HG00096.chrom20.ILLUMINA.bwa.GBR.low_coverage.20120522.bam.bai sample.bam.bai
 # Run this script at the start to collect all the necessary data files
 # Comment out lines you do not need (e.g. you may have a reference already)
 
-get_reference
+get_full_reference
 get_1000g_sample
 get_sample_BAM

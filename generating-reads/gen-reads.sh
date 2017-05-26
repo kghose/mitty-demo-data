@@ -34,6 +34,10 @@ mitty -v4 generate-reads \
    --fastq2 >(gzip > ${FASTQ_PREFIX}2.fq.gz) \
    --threads 2
 
+mitty utils qname-stats \
+  ${FASTQ_PREFIX}1.fq.gz \
+  ${FASTQ_PREFIX}-lq.txt
+
 mitty -v4 corrupt-reads \
   ${READMODEL} \
   ${FASTQ_PREFIX}1.fq.gz >(gzip > ${FASTQ_PREFIX}-corrupt1.fq.gz) \
@@ -43,3 +47,7 @@ mitty -v4 corrupt-reads \
   --fastq2-in ${FASTQ_PREFIX}2.fq.gz \
   --fastq2-out >(gzip > ${FASTQ_PREFIX}-corrupt2.fq.gz) \
   --threads 2
+
+mitty utils qname-stats \
+  ${FASTQ_PREFIX}-corrupt1.fq.gz \
+  ${FASTQ_PREFIX}-corrupt-lq.txt

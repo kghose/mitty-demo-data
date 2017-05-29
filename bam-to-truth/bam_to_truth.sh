@@ -4,7 +4,6 @@ set -ex
 FASTA=../data/human_g1k_v37.fa.gz
 FASTQ_PREFIX=HG0019-mq0
 BAM=../alignment-accuracy/HG00119-bwa.bam
-OUTBAM=HG0019-mq0.bam 
 
 mitty -v4 debug bam-to-truth ${BAM} 0 HG00019 ${FASTQ_PREFIX}
  
